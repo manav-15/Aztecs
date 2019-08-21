@@ -56,7 +56,7 @@ contract Ballot {
         sender.voted = true;
         sender.vote = toProposal;   
         proposals[toProposal] += sender.weight;
-        if (now > (startTime+ 120 seconds)) {stage = Stage.Done; emit votingCompleted();}        
+        if (now > (startTime+ 60 seconds)) {stage = Stage.Done; emit votingCompleted();}        
         
     }
 

@@ -7,9 +7,7 @@ contract Ballot {
         uint8 vote;
         //address delegate;
     }
-    /*struct Proposal {
-        uint voteCount;
-    }*/
+
     enum Stage {Init,Reg, Vote, Done}
     Stage public stage = Stage.Init;
     

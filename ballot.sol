@@ -42,7 +42,7 @@ contract Ballot {
     /// May only be called by $(chairperson).
     function register(address toVoter) public validStage(Stage.Reg) onlyOwner {
         //if (stage != Stage.Reg) {return;}
-        if (voters[toVoter].voted) revert();
+        if (voters[toVoter].weight != 0) revert();
         voters[toVoter].weight = 1;
         voters[toVoter].voted = false;
         if (now > (startTime+ 60 seconds)) {stage = Stage.Vote; }        
